@@ -90,6 +90,9 @@ var ProductListComponent = /** @class */ (function () {
         console.log("Init productList component");
     };
     ;
+    ProductListComponent.prototype.onRatingClicked = function (message) {
+        this.pageTitle = 'Product List: ' + message;
+    };
     ProductListComponent.prototype.performFilter = function (filterBy) {
         filterBy = filterBy.toLocaleLowerCase();
         return this.products.filter(function (product) {

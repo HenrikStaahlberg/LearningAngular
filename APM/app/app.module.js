@@ -12,6 +12,7 @@ var forms_1 = require("@angular/forms");
 var app_component_1 = require("./app.component");
 var product_list_component_1 = require("./products/product-list.component");
 var convert_to_spaces_pip_1 = require("./shared/convert-to-spaces.pip");
+var star_component_1 = require("./shared/star.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -24,7 +25,8 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 app_component_1.AppComponent,
                 product_list_component_1.ProductListComponent,
-                convert_to_spaces_pip_1.ConvertToSpacesPipe
+                convert_to_spaces_pip_1.ConvertToSpacesPipe,
+                star_component_1.StarComponent
             ],
             providers: [],
             bootstrap: [app_component_1.AppComponent]
