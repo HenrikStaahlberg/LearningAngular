@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var product_service_1 = require("./products/product.service");
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
         this.pageTitle = 'ACME Product Manager';
@@ -14,7 +15,8 @@ var AppComponent = /** @class */ (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'pm-app',
-            template: "\n        <div>\n        <h1>Angular2: Getting Started</h1>\n        <pm-products></pm-products>\n        </div>\n    "
+            template: "\n        <div>\n        <h1>Angular2: Getting Started</h1>\n        <pm-products></pm-products>\n        </div>\n    ",
+            providers: [product_service_1.ProductService],
         })
     ], AppComponent);
     return AppComponent;
