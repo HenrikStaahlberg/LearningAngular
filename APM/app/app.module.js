@@ -10,10 +10,14 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/common/http");
+var router_1 = require("@angular/router");
 var app_component_1 = require("./app.component");
 var product_list_component_1 = require("./products/product-list.component");
 var convert_to_spaces_pip_1 = require("./shared/convert-to-spaces.pip");
 var star_component_1 = require("./shared/star.component");
+var product_detail_component_1 = require("./products/product-detail.component");
+var welcome_component_1 = require("./home/welcome.component");
+var product_guard_service_1 = require("./products/product-guard.service");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -22,15 +26,26 @@ var AppModule = /** @class */ (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
-                http_1.HttpClientModule
+                http_1.HttpClientModule,
+                router_1.RouterModule.forRoot([
+                    { path: 'products', component: product_list_component_1.ProductListComponent },
+                    { path: 'products/:id',
+                        canActivate: [product_guard_service_1.ProductGuardService],
+                        component: product_detail_component_1.ProductDetailComponent },
+                    { path: 'welcome', component: welcome_component_1.WelcomeComponent },
+                    { path: '', redirectTo: 'welcome', pathMatch: 'full' },
+                    { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
+                ])
             ],
             declarations: [
                 app_component_1.AppComponent,
                 product_list_component_1.ProductListComponent,
                 convert_to_spaces_pip_1.ConvertToSpacesPipe,
-                star_component_1.StarComponent
+                star_component_1.StarComponent,
+                product_detail_component_1.ProductDetailComponent,
+                welcome_component_1.WelcomeComponent
             ],
-            providers: [],
+            providers: [product_guard_service_1.ProductGuardService],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);
