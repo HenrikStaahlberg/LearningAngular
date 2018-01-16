@@ -1,41 +1,31 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { AppComponent }  from './app.component';
-import { ProductListComponent } from './products/product-list.component';
-import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pip';
-import { StarComponent } from './shared/star.component';
-import { ProductDetailComponent } from './products/product-detail.component';
 import { WelcomeComponent } from './home/welcome.component';
-import { ProductGuardService } from './products/product-guard.service';
+import { ProductModule } from './products/product.module';
+import { TutorialModule } from './tutorial/tutorial.module';
 
 @NgModule({
   imports: [ 
     BrowserModule,
-    FormsModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      { path: 'products', component: ProductListComponent },
-      { path: 'products/:id',
-        canActivate: [ ProductGuardService ],
-        component: ProductDetailComponent },
       { path: 'welcome', component: WelcomeComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
-    ])
+    ]),
+    ProductModule,
+    TutorialModule
   ],
   declarations: [ 
     AppComponent,
-    ProductListComponent,
-    ConvertToSpacesPipe,
-    StarComponent,
-    ProductDetailComponent,
     WelcomeComponent 
   ],
-  providers: [ ProductGuardService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

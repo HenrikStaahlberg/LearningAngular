@@ -1,0 +1,12 @@
+<div>
+    <button mat-raised-button id="next-step">Step</button>
+    <mat-horizontal-stepper 
+        [linear]=true>
+        <mat-step *ngFor='let step of stepInfo'>
+            <ng-template matStepLabel>{{step}}</ng-template>
+        </mat-step>
+    </mat-horizontal-stepper>
+    <div>
+        Total steps are: {{steps}}
+    </div>
+</div>
