@@ -1,3 +1,13 @@
-<p>
-  info-bubble works!
-</p>
+<div class="bubble" *ngIf="manual"> 
+    <div class="description">
+  <p class="description-content">
+      {{manual.steps[manual.currentStep].description}}
+      Proin vestibulum facilisis imperdiet. Duis in ligula viverra, bibendum magna at, molestie quam. Integer et tortor massa. Nam et justo at elit congue suscipit. Pellentesque auctor, purus eu scelerisque suscipit, magna odio condimentum elit, ac sollicitudin nunc quam at velit. Nulla convallis tempus tempor. Sed consectetur eros id magna congue tempus. Fusce sed nisi pretium nisl volutpat posuere.
+    </p>
+    <div class="actions" *ngIf="manual.steps[manual.currentStep].hasButton">
+        <button mat-button>Some action</button>
+    </div>
+  </div>
+    <img class="background-image">
+
+</div>

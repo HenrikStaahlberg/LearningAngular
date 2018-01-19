@@ -1,3 +1,11 @@
-<p>
-  nav works!
-</p>
+<mat-toolbar *ngIf="manual" class="nav-toolbar">
+    <button mat-button class="toolbar-close-button"><mat-icon>close</mat-icon></button>
+    <div class="center-actions">
+      <button mat-button (click)="stepBackward.emit()"><mat-icon>chevron_left</mat-icon></button>
+  <iman-out-of class="out-of"
+    [max]="manual.steps.length"
+    [current]="manual.currentStep">
+  </iman-out-of>
+  <button mat-button (click)="stepForward.emit()"><mat-icon>chevron_right</mat-icon></button>
+  </div>
+</mat-toolbar>

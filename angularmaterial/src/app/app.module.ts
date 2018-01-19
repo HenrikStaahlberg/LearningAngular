@@ -7,9 +7,10 @@ import { Routes } from '@angular/router';
 import { RouterModule } from '@angular/router';
 
 const routes: Routes = [
+  {path: 'iman', loadChildren: './iman/iman.module#ImanModule'},
   {path: 'contactmanager', loadChildren: './contactmanager/contactmanager.module#ContactmanagerModule'},
   {path: 'demo', loadChildren: './demo/demo.module#DemoModule'},
-  {path: '**', redirectTo: 'contactmanager'}
+  {path: '**', redirectTo: 'iman'}
 ];
 
 @NgModule({

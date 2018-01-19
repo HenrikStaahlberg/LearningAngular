@@ -1,0 +1,33 @@
+.bubble {
+    height: 200px;
+    width: 450px;
+
+
+    position: absolute;
+    top: 250px;
+    left: 250px;
+
+    float: left;
+}
+
+.background-image {
+    max-width: 100%;
+    height: auto;
+    
+    content: url('../../assets/images/SpeakBubbleSVGWhite.png');
+}
+
+.description {
+    position:absolute;
+    top: 0px;
+    left: 17%;
+
+    width:80%;
+    
+    display: flex;
+    flex-flow: column;
+}
+
+.actions {
+    align-content: center;
+}
